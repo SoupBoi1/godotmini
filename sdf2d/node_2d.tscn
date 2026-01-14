@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx0oo3bthgyvx"]
+
+[ext_resource type="Shader" uid="uid://bwmxxpt17c3vt" path="res://test.gdshader" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://dc12hxeyledth" path="res://icon.svg" id="2_epypp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0hol4"]
+resource_local_to_scene = true
+shader = ExtResource("1_0e48y")
+shader_parameter/wave_f = 9.1011
+shader_parameter/wave_a = 0.01
+shader_parameter/wave_s = 5.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_0hol4")
+position = Vector2(163, 103)
+scale = Vector2(10.7969, 5.82812)
+texture = ExtResource("2_epypp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(159, 120)
+scale = Vector2(3.75391, 2.64844)
+texture = ExtResource("2_epypp")
