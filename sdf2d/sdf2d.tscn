@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://du144byxldx7e"]
+
+[ext_resource type="Shader" uid="uid://bod43tri7fe67" path="res://sdf2d.gdshader" id="1_swimn"]
+[ext_resource type="Texture2D" uid="uid://dc12hxeyledth" path="res://icon.svg" id="2_70goa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_70goa"]
+shader = ExtResource("1_swimn")
+shader_parameter/obj1 = Vector2(0.54, 0.5)
+shader_parameter/thrshold = 0.26
+shader_parameter/outline = 0.01
+
+[node name="Sdf2d" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_70goa")
+position = Vector2(-73, 11)
+scale = Vector2(1.78906, 1.65625)
+texture = ExtResource("2_70goa")

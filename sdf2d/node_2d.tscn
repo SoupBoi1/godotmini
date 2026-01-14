@@ -8,19 +8,19 @@ resource_local_to_scene = true
 shader = ExtResource("1_0e48y")
 shader_parameter/wave_f = 9.1011
 shader_parameter/wave_a = 0.01
-shader_parameter/wave_s = 5.0
+shader_parameter/wave_s = 1.8
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_0hol4")
-position = Vector2(163, 103)
-scale = Vector2(10.7969, 5.82812)
+position = Vector2(257, 212)
+scale = Vector2(2.04443, 1.44824)
 texture = ExtResource("2_epypp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(159, 120)
-scale = Vector2(3.75391, 2.64844)
+position = Vector2(251, 207)
+scale = Vector2(2.10645, 1.86914)
 texture = ExtResource("2_epypp")
