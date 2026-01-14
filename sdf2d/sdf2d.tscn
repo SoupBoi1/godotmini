@@ -5,14 +5,16 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_70goa"]
 shader = ExtResource("1_swimn")
-shader_parameter/obj1 = Vector2(0.54, 0.5)
-shader_parameter/thrshold = 0.26
-shader_parameter/outline = 0.01
+shader_parameter/k_factor = 0.05
+shader_parameter/obj1 = Vector2(0.69, 0.26)
+shader_parameter/radus = 0.15
+shader_parameter/outline = 0.001
+shader_parameter/obj2 = Vector2(0.45, 0.25)
 
 [node name="Sdf2d" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_70goa")
-position = Vector2(-73, 11)
-scale = Vector2(1.78906, 1.65625)
+position = Vector2(-73, 1.5)
+scale = Vector2(1.78906, 1.80469)
 texture = ExtResource("2_70goa")
