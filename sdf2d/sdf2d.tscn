@@ -6,12 +6,12 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_70goa"]
 shader = ExtResource("1_swimn")
 shader_parameter/k_factor = 0.07
-shader_parameter/obj1 = Vector2(0.62, 0.48)
+shader_parameter/obj1 = Vector2(0.84, 0.48)
 shader_parameter/radus = 0.1
 shader_parameter/outline = 0.011
 shader_parameter/obj2 = Vector2(0.17, 0.69)
 shader_parameter/radus2 = Vector2(0.07, 0.07)
-shader_parameter/obj3 = Vector2(0.6, 0.18)
+shader_parameter/obj3 = Vector2(0.51, 0.18)
 shader_parameter/radus3 = 0.16
 
 [node name="Sdf2d" type="Node2D"]
