@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://gtgi6aotjsea"]
+
+[ext_resource type="Script" uid="uid://crc3pkfu4xl01" path="res://axe/axe.gd" id="1_g4gfw"]
+[ext_resource type="PackedScene" uid="uid://brye5d1ipyu4w" path="res://axe/leviathan_axe.glb" id="1_ib58u"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ib58u"]
+points = PackedVector3Array(0.882221, -0.0195606, -0.0699062, 0.882221, 0.0218485, -0.0699062, -0.995906, 0.0356596, 0.16489, -0.981987, -0.0610062, 0.0820177, 0.661276, -0.0333718, 0.137249, -0.981987, 0.0633063, 0.0958383, 0.744204, 0.0494708, 0.0958383, -0.650276, -0.0195606, 0.192531, 0.979068, -0.0471829, -0.0146495, -0.981987, 0.0218485, 0.0544536, -0.981987, -0.0610062, 0.151069, 0.951425, 0.0494708, -0.0284444, 0.578544, 0.0218485, 0.151069, -0.954344, 0.0633063, 0.151069, 0.923979, -0.0471829, 0.0681971, -0.816327, 0.0218485, 0.192531, -0.981987, -0.0195606, 0.0544536, 0.937702, 0.0356596, 0.0820177, 0.896336, -0.0471829, -0.042265, -0.981987, 0.0494708, 0.0681971, 0.61991, 0.0356596, 0.137249, 0.744204, -0.0195606, 0.137249, 0.702838, -0.0471829, 0.109633, -0.981987, -0.0333718, 0.178711, -0.664391, 0.0218485, 0.192531, 0.979068, 0.0494708, -0.000828877, 0.951425, 0.0356596, -0.0560856, 0.578544, -0.0195606, 0.151069, 0.937702, -0.0333718, 0.0820177, -0.664391, -0.0471829, 0.16489, 0.979068, -0.0471829, 0.0267867, -0.595187, 0.0356596, 0.178711)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4gfw"]
+size = Vector3(0.111694, 0.183716, 0.0399475)
+
+[node name="Axe" type="CharacterBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_g4gfw")
+
+[node name="Leviathan_Axe" parent="." instance=ExtResource("1_ib58u")]
+
+[node name="handel_shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(-8.39196e-17, -1.65203e-08, -0.37794, -0.37794, -1.67839e-16, 8.39196e-17, -1.67839e-16, 0.37794, -1.65203e-08, -8.9407e-07, -0.000849673, -4.58209e-07)
+shape = SubResource("ConvexPolygonShape3D_ib58u")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="AxeHead" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0411987, 0.262268, -0.000991821)
+shape = SubResource("BoxShape3D_g4gfw")
+
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+
+[editable path="Leviathan_Axe"]

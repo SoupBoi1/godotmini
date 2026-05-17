@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://n86bey4wjy48"]
+
+[ext_resource type="Script" uid="uid://rsld4j4kqknt" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="PackedScene" uid="uid://gtgi6aotjsea" path="res://axe/axe.tscn" id="1_xhfnw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpjcp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kne1u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kpjcp"]
+
+[sub_resource type="Curve" id="Curve_kpjcp"]
+_data = [Vector2(0, 0), 0.0, 2.99491, 0, 0, Vector2(0.962963, 0), -5.65635, 0.0, 0, 0]
+point_count = 2
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_kpjcp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_kpjcp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_kne1u")
+
+[node name="Centre" type="Marker3D" parent="."]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Centre"]
+transform = Transform3D(0.952762, -0.269273, -0.140485, 0.303716, 0.845782, 0.438644, 0.000705014, -0.460591, 0.887612, 0.991934, 0, 0)
+shape = SubResource("SphereShape3D_kpjcp")
+
+[node name="Camera3D" type="Camera3D" parent="Centre"]
+transform = Transform3D(1, 2.90172e-09, -1.46159e-08, 0, 0.980857, 0.194731, 1.49012e-08, -0.194731, 0.980857, 0.741065, 0.848605, 1.70032)
+
+[node name="Hand" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929247, 0, 0)
+
+[node name="Axe" parent="Hand" node_paths=PackedStringArray("player") instance=ExtResource("1_xhfnw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.325448, 0.254054, -0.0100302)
+recall_curve = SubResource("Curve_kpjcp")
+player = NodePath("../..")
